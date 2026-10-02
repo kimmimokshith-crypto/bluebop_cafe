@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>The Bluebop Cafe & Bar | Khar West, Mumbai</title>
   <meta name="description" content="Discover The Bluebop Cafe & Bar in Khar West, Mumbai. A premium dining experience spanning Italian, Mexican, Continental, American-inspired favorites, wood-fired pizzas, desserts, and craft beverages.">
 
@@ -87,9 +87,9 @@
     </nav>
 
     <!-- Header Actions (Audio Ambiance & CTA) -->
-    <div class="hidden sm:flex items-center gap-4">
+    <div class="hidden sm:flex items-center gap-3 sm:gap-4">
       <!-- Ambient Jazz Soundscape Toggle -->
-      <button id="audio-ambiance-toggle" class="audio-toggle-btn" title="Toggle Bluebop Jazz Lounge Ambiance" aria-label="Toggle Jazz Lounge Ambiance" aria-pressed="false">
+      <button id="audio-ambiance-toggle" class="audio-toggle-btn audio-ambiance-toggle-btn" title="Toggle Bluebop Jazz Lounge Ambiance" aria-label="Toggle Jazz Lounge Ambiance" aria-pressed="false">
         <span class="audio-bars-wrapper">
           <span class="audio-bar"></span>
           <span class="audio-bar"></span>
@@ -103,20 +103,42 @@
       <a href="#reserve" class="btn-primary">Book a Table</a>
     </div>
 
-    <!-- Mobile Hamburger Toggle -->
+    <!-- Mobile / Tablet Hamburger Toggle -->
     <button id="mobile-menu-toggle" class="lg:hidden hamburger-btn ml-2" aria-label="Open Navigation Menu" aria-expanded="false">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
   </header>
 
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div id="mobile-menu-backdrop" class="mobile-menu-backdrop" aria-hidden="true"></div>
+
   <!-- Mobile Navigation Drawer -->
-  <aside id="mobile-menu-drawer" class="mobile-nav-drawer lg:hidden">
+  <aside id="mobile-menu-drawer" class="mobile-nav-drawer lg:hidden" aria-label="Mobile Navigation">
     <div>
-      <div class="mb-8">
-        <span class="font-serif-display text-2xl tracking-[0.15em] text-warm-ivory block">THE BLUEBOP</span>
-        <span class="text-xs tracking-[0.2em] text-champagne uppercase">Cafe & Bar • Khar West</span>
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-champagne/15">
+        <div>
+          <span class="font-serif-display text-2xl tracking-[0.15em] text-warm-ivory block">THE BLUEBOP</span>
+          <span class="text-xs tracking-[0.2em] text-champagne uppercase">Cafe & Bar • Khar West</span>
+        </div>
+        <button id="mobile-menu-close" class="text-champagne p-2 hover:text-warm-ivory transition-colors" aria-label="Close Navigation Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
       </div>
+
+      <!-- Mobile Jazz Ambiance Toggle -->
+      <button class="audio-toggle-btn audio-ambiance-toggle-btn w-full justify-center mb-6 py-2.5" title="Toggle Bluebop Jazz Lounge Ambiance" aria-label="Toggle Jazz Lounge Ambiance" aria-pressed="false">
+        <span class="audio-bars-wrapper">
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+        </span>
+        <span>The Bluebop Vibe (Jazz Lounge)</span>
+      </button>
+
       <ul class="mobile-nav-list">
         <li><a href="#hero" class="mobile-nav-link">Home</a></li>
         <li><a href="#about" class="mobile-nav-link">About The Café</a></li>
@@ -128,8 +150,8 @@
       </ul>
     </div>
 
-    <div class="pt-8 border-t border-champagne/20">
-      <div class="text-xs text-muted-steel mb-3">Linking Road, Khar, Mumbai</div>
+    <div class="pt-6 border-t border-champagne/20">
+      <div class="text-xs text-muted-steel mb-3">Linking Road, Khar West, Mumbai</div>
       <a href="tel:+918047483415" class="btn-primary w-full text-center block mb-3">CALL +91 8047483415</a>
       <a href="#reserve" class="btn-secondary w-full text-center block">RESERVE A TABLE</a>
     </div>
@@ -284,10 +306,14 @@
           </div>
         </div>
 
-        <!-- Mobile Dynamic Single Stage Display -->
-        <div class="mobile-milestone-display">
-          <span class="text-[0.65rem] text-champagne tracking-widest uppercase block mb-1">CHAPTER IN MOTION</span>
-          <span class="font-serif text-lg text-warm-ivory font-medium">Scroll to traverse the café story</span>
+        <!-- Mobile & Tablet Dynamic Stage Display -->
+        <div id="mobile-milestone-display" class="mobile-milestone-display">
+          <div class="flex items-center justify-between mb-1.5">
+            <span id="mobile-milestone-badge" class="text-[0.68rem] text-champagne font-bold tracking-widest uppercase">CHAPTER 01 OF 05</span>
+            <span id="mobile-milestone-progress" class="text-[0.68rem] text-champagne font-mono font-bold">0%</span>
+          </div>
+          <h4 id="mobile-milestone-title" class="font-serif text-lg sm:text-xl text-warm-ivory font-medium leading-tight">The Khar Arrival</h4>
+          <p id="mobile-milestone-desc" class="text-xs text-muted-steel mt-0.5">Satyam Building, Linking Road</p>
         </div>
       </div>
     </div>
